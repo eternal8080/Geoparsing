@@ -63,3 +63,17 @@ Each sample is annotated with:
   "structure": [...],
   "semantics": [...]
 }
+```
+---
+
+## 📖 Citation
+
+If you find this work useful in your research, please consider citing:
+
+```bibtex
+@article{wang2026geoparsing,
+  title={Geoparsing: Diagram Parsing for Plane and Solid Geometry with a Unified Formal Language},
+  author={Wang, Peijie and Zhang, Ming-Liang and Cao, Jun and Deng, Chao and Ran, Dekang and Sun, Hongda and Bu, Pi and Zhang, Xuan and Wang, Yingyao and Song, Jun and others},
+  journal={arXiv preprint arXiv:2604.11600},
+  year={2026}
+}
