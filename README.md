@@ -1,1 +1,57 @@
-# Geoparsing
+# Geoparsing: Diagram Parsing for Plane and Solid Geometry with a Unified Formal Language
+
+[![Paper](https://img.shields.io/badge/Paper-ACL%202026-blue)](https://arxiv.org/abs/2604.11600)
+[![Dataset](https://img.shields.io/badge/Dataset-GDP--29K-green)](https://huggingface.co/datasets/PeijieWang/GDP29K)
+[![License](https://img.shields.io/badge/License-MIT-orange)](./LICENSE)
+
+Official implementation for the ACL paper:
+
+> **Geoparsing: Diagram Parsing for Plane and Solid Geometry with a Unified Formal Language**  
+
+---
+
+## 🔍 Overview
+
+Multimodal Large Language Models (MLLMs) have shown strong reasoning ability but still struggle with **geometry understanding**, mainly due to **fine-grained perception bottlenecks**.
+
+This project introduces:
+
+- 🔷 A **unified formal language** for both **plane and solid geometry**
+- 🔷 A large-scale dataset **GDP-29K** (20K plane + 9K solid)
+- 🔷 A training paradigm combining:
+  - Supervised Fine-Tuning (SFT)
+  - Reinforcement Learning with Verifiable Rewards (RLVR)
+
+Our method significantly improves **geometry diagram parsing** and boosts **downstream reasoning performance**.
+
+---
+
+## 🧠 Key Contributions
+
+- ✅ Unified formal representation for **2D + 3D geometry**
+- ✅ First large-scale **solid geometry parsing dataset**
+- ✅ RL-based training with **rule-based verifier**
+- ✅ Strong improvements on downstream tasks (Geometry3K, PGPS9K, SolidGeo)
+
+---
+
+## 📊 Dataset: GDP-29K
+
+- **Total samples**: 28,977
+- **Plane geometry**: 19,965
+- **Solid geometry**: 8,917
+- Includes:
+  - Printed diagrams
+  - Handwritten diagrams
+
+Each sample is annotated with:
+
+```json
+{
+  "points": [...],
+  "lines": [...],
+  "circles": [...],
+  "planes": [...],
+  "structure": [...],
+  "semantics": [...]
+}
