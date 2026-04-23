@@ -12,6 +12,10 @@ Official implementation for the ACL paper:
 
 ## 🔍 Overview
 
+<p align="center">
+  <img src="image/pipeline.png" width="700"/>
+</p>
+
 Multimodal Large Language Models (MLLMs) have shown strong reasoning ability but still struggle with **geometry understanding**, mainly due to **fine-grained perception bottlenecks**.
 
 This project introduces:
@@ -36,6 +40,10 @@ Our method significantly improves **geometry diagram parsing** and boosts **down
 ---
 
 ## 📊 Dataset: GDP-29K
+
+<p align="center">
+  <img src="image/GDP29K.png" width="700"/>
+</p>
 
 - **Total samples**: 28,977
 - **Plane geometry**: 19,965
