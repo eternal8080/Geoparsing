@@ -67,6 +67,67 @@ Each sample is annotated with:
 ```
 ---
 
+## 🚀 Inference
+We follow the official environment setup of Qwen3-VL. Install dependencies by referring to the [Qwen3-VL official repository](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct).
+
+We provide a minimal example for running inference with the released Geoparsing model.
+
+```bash
+import torch
+from transformers import Qwen3VLForConditionalGeneration, AutoProcessor
+
+model_path = "YOUR_MODEL_PATH"  # local path or HuggingFace repo id: https://huggingface.co/PeijieWang/GDP-4B
+
+model = Qwen3VLForConditionalGeneration.from_pretrained(
+    model_path,
+    torch_dtype="auto",
+    device_map="cuda:0"
+)
+processor = AutoProcessor.from_pretrained(model_path)
+
+messages = [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "image",
+                "image": "image/example.png",
+            },
+            {
+                "type": "text",
+                "text": "Please parse the geometric diagram and provide its formal description.",
+            },
+        ],
+    }
+]
+
+inputs = processor.apply_chat_template(
+    messages,
+    tokenize=True,
+    add_generation_prompt=True,
+    return_dict=True,
+    return_tensors="pt"
+)
+inputs = inputs.to(model.device)
+
+generated_ids = model.generate(
+    **inputs,
+    max_new_tokens=1280
+)
+
+generated_ids_trimmed = [
+    out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
+]
+
+output_text = processor.batch_decode(
+    generated_ids_trimmed,
+    skip_special_tokens=True,
+    clean_up_tokenization_spaces=False
+)
+
+print(output_text[0])
+```
+
 ## 📖 Citation
 
 If you find this work useful in your research, please consider citing:
