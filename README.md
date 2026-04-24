@@ -1,5 +1,6 @@
 # Geoparsing: Diagram Parsing for Plane and Solid Geometry with a Unified Formal Language
 
+[![Homepage](https://img.shields.io/badge/Homepage-Geoparsing-red)](https://eternal8080.github.io/geoparsing.github.io/)
 [![Paper](https://img.shields.io/badge/Paper-ACL%202026-blue)](https://arxiv.org/abs/2604.11600)
 [![Dataset](https://img.shields.io/badge/Dataset-GDP--29K-green)](https://huggingface.co/datasets/PeijieWang/GDP29K)
 [![Model](https://img.shields.io/badge/Model-GDP--4B-yellow)](https://huggingface.co/PeijieWang/GDP-4B)
